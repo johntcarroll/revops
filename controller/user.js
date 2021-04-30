@@ -17,7 +17,7 @@ const getUsers = () => {};
 
 const createUser = (req, res) => {
   userService
-    .createUser(req.query)
+    .createUser(req.body)
     .then((user) => {
       res.send(user);
     })
@@ -30,7 +30,7 @@ const createUser = (req, res) => {
 const updateUser = (req, res) => {
   userService
     .getUser(req.params.id)
-    .then((user) => userService.updateUser(user, req.query))
+    .then((user) => userService.updateUser(user, req.body))
     .then((user) => {
       res.send(user);
     })

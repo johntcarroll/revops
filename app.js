@@ -1,6 +1,11 @@
-const app = require("express")();
-const apiRoutes = require("./routes/api")
+const express = require("express");
+const apiRoutes = require("./routes/api");
 
-app.use('/api', apiRoutes);
+const app = express();
+
+// parse json request body
+app.use(express.json());
+
+app.use("/api", apiRoutes);
 
 module.exports = app;
